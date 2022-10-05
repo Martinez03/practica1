@@ -1,10 +1,8 @@
 package Practica1;
 
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 
 public class ListaWebs {
 	
@@ -19,36 +17,21 @@ public class ListaWebs {
  		return this.lista.iterator();
  		
  	}
+	public void anadirWeb(Web pWeb) 
+	{
+		this.lista.add(pWeb);
+	}
 	
-	
-	public void cargarLista(String nomF) { 
-		String[] array;
-		int id;
-		String nombre;
-		Web pWeb;
-		
-		try {      
-			Scanner entrada = new Scanner(new FileReader(nomF));
-			String linea;
-			while (entrada.hasNext()) {         
-				linea = entrada.nextLine();
-				array = linea.split(":");
-				id = Integer.parseInt(array[0]);    
-				nombre = array[1];
-				pWeb = new Web(nombre, id);
-				this.lista.add(pWeb);	
-			}     
-			entrada.close();   
-			}   
-		catch(IOException e) 
-		{
-			e.printStackTrace();
-		}
-		}
 	public String id2String (int x) 
 	{
-		System.out.println(this.lista.get(x).getNombre());
+		//System.out.println(this.lista.get(x).getNombre());
 		return this.lista.get(x).getNombre();
+	}
+	
+	public Web id2Web (int x) 
+	{
+		//System.out.println(this.lista.get(x).getNombre());
+		return this.lista.get(x);
 	}
 	
 	public int string2Id(String s) 
@@ -76,6 +59,23 @@ public class ListaWebs {
 		Web pWeb = this.lista.get(id);
 		return pWeb.getListaWebs();
 	}
+	public ListaWebs word2Webs(String s)
+	{
+		ListaWebs pLista = new ListaWebs();
+		Web pWeb;
+		Iterator<Web> it = this.getIterador();
+		while (it.hasNext())
+		{
+			pWeb = it.next();
+			if (pWeb.getNombre().contains(s))
+			{
+				pLista.anadirWeb(pWeb);
+			}
+		}
+		return pLista;
+	}
+	
+	
 	 
 	
 

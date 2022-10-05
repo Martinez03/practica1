@@ -2,8 +2,6 @@ package Practica1;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,7 +40,7 @@ public class ListaWebsTest {
 
 	@Test
 	public void testString2Id() {
-		lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 		lista.string2Id("003.spb.ru");
 	}
 

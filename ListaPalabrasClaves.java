@@ -9,6 +9,12 @@ public class ListaPalabrasClaves
 {
 	private ArrayList<PalabraClave> lista;
 	
+	public  ListaPalabrasClaves()
+	{
+		this.lista= new ArrayList<PalabraClave>();
+	}
+	
+	
 	public ListaPalabrasClaves web2Words(String w)
 	{
 		ListaPalabrasClaves pLista = new ListaPalabrasClaves();
@@ -17,9 +23,10 @@ public class ListaPalabrasClaves
 		while (it.hasNext())
 		{
 			pPalabraClave = it.next();
-			if (w.contains(pPalabraClave.getNombre()));
+			if (w.contains(pPalabraClave.getNombre()))
 			{
 				pLista.anadirPalabra(pPalabraClave);
+				System.out.println(pPalabraClave.getNombre());
 			}
 			
 		}

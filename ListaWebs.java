@@ -24,13 +24,12 @@ public class ListaWebs {
 	
 	public String id2String (int x) 
 	{
-		//System.out.println(this.lista.get(x).getNombre());
+		System.out.println(this.lista.get(x).getNombre());
 		return this.lista.get(x).getNombre();
 	}
 	
 	public Web id2Web (int x) 
 	{
-		//System.out.println(this.lista.get(x).getNombre());
 		return this.lista.get(x);
 	}
 	
@@ -70,6 +69,7 @@ public class ListaWebs {
 			if (pWeb.getNombre().contains(s))
 			{
 				pLista.anadirWeb(pWeb);
+				System.out.println(pWeb.getNombre());
 			}
 		}
 		return pLista;

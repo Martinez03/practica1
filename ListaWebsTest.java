@@ -48,6 +48,7 @@ public class ListaWebsTest {
 	public void testEnlacesSalientes() {
 		//fail("Not yet implemented");
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
 		//Primer caso: web con varias webs asociadas
 		Webs.getLista().enlacesSalientes("0-200.com");
 		//Segundo caso: web con una web asociada

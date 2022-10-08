@@ -28,25 +28,32 @@ public class ListaWebsTest {
 	@Test
 	public void testCargarLista() 
 	{
-		//lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_a�o/EDA/datuak-2022-2023/index-2022-2023.txt");
+		//lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 	}
 
 	@Test
 	public void testId2String() 
 	{
-		//lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_a�o/EDA/datuak-2022-2023/index-2022-2023.txt");
+		//lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 		//lista.id2String(1902119);
 	}
 
 	@Test
 	public void testString2Id() {
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_a�o/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 		lista.string2Id("003.spb.ru");
 	}
 
 	@Test
 	public void testEnlacesSalientes() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		//Primer caso: web con varias webs asociadas
+		Webs.getLista().enlacesSalientes("0-200.com");
+		//Segundo caso: web con una web asociada
+		Webs.getLista().enlacesSalientes("0-311.com");
+		//Tercer caso: web sin webs asociadas
+		Webs.getLista().enlacesSalientes("0-5.co.il");
 	}
 
 }

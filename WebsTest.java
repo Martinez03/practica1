@@ -12,7 +12,6 @@ public class WebsTest {
 	@Before
 	public void setUp() throws Exception 
 	{
-		Webs.getWebs().cargarLista(null);
 		
 	}
 
@@ -28,6 +27,13 @@ public class WebsTest {
 	@Test
 	public void testGetLista() {
 		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testCargarListaLigada() {
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
+		
 	}
 
 }

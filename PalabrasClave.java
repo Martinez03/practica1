@@ -19,9 +19,14 @@ public class PalabrasClave
 		return PalabrasClave.miPalabrasClave;
 	}
 	
+	
+	public ListaPalabrasClaves getLista() {
+		return this.lista;
+	}
+
 	public void cargarListaPalabras(String nomF) { 
 		String nombre;
-		PalabraClave pPalabra;
+		PalabraClave pPalabra = new PalabraClave(null);
 		
 		try {      
 			Scanner entrada = new Scanner(new FileReader(nomF));
@@ -31,6 +36,7 @@ public class PalabrasClave
 				nombre = linea;
 				pPalabra = new PalabraClave(nombre);
 				this.lista.anadirPalabra(pPalabra);	
+				//System.out.println(pPalabra.getNombre());
 			}     
 			entrada.close();   
 			}   

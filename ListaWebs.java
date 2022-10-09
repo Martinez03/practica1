@@ -24,14 +24,26 @@ public class ListaWebs {
 	
 	public String id2String (int x) 
 	{
+		try{
 		System.out.println(this.lista.get(x).getNombre());
 		return this.lista.get(x).getNombre();
+		}
+		catch (ArrayIndexOutOfBoundsException e){
+			System.out.println("Id no encontrado.");
+			return "Id no encontrado.";
+			}
 	}
 	
 	public Web id2Web (int x) 
 	{
+		try{
 		System.out.println(this.lista.get(x).getNombre());
 		return this.lista.get(x);
+		}
+		catch (ArrayIndexOutOfBoundsException e){
+			System.out.println("Id no encontrado.");
+			return null;
+			}
 	}
 	
 	public int string2Id(String s) 
@@ -50,14 +62,22 @@ public class ListaWebs {
 				}
 			}
 		System.out.println(id);
+		if (id == 0){
+			System.out.println("Web no encontrada.");
+		}
 		return id;
 	}
 	
 	public ListaWebs enlacesSalientes(String s)
 	{
 		int id = this.string2Id(s);
-		Web pWeb = this.lista.get(id);
-		return pWeb.getListaWebs();
+		if (id != 0){
+			Web pWeb = this.lista.get(id);
+			return pWeb.getListaWebs();
+		} else {
+			System.out.println("Web no encontrada.");
+			return Webs.getWebs().getLista();
+		}
 	}
 	public ListaWebs word2Webs(String s)
 	{

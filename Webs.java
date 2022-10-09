@@ -61,7 +61,8 @@ public class Webs
 		try {      
 			Scanner entrada = new Scanner(new FileReader(nomF));
 			String linea;   
-				while (entrada.hasNext()){ 	
+				while (entrada.hasNext()){ 
+					vacio = false;
 					linea = entrada.nextLine();
 					array = linea.split("\\s-*> ");
 					id = Integer.parseInt(array[0]);

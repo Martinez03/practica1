@@ -33,6 +33,13 @@ public class WebsTest {
 	public void testCargarListaLigada() {
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
+		Webs.getWebs().getLista().enlacesSalientes("0-360.com");
+		Webs.getWebs().getLista().enlacesSalientes("0-5.co.il");  //ListaVacia
+		Webs.getWebs().getLista().enlacesSalientes("tchibo.ch");
+		Webs.getWebs().getLista().enlacesSalientes("tchin-tchine.com");  //ListaVacia
+		
+		
+		
 		
 	}
 

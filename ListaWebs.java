@@ -30,6 +30,7 @@ public class ListaWebs {
 	
 	public Web id2Web (int x) 
 	{
+		System.out.println(this.lista.get(x).getNombre());
 		return this.lista.get(x);
 	}
 	

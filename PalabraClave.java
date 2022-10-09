@@ -16,7 +16,8 @@ public class PalabraClave
 	
 	public void cargarListaWebs()
 	{
-		this.lista = lista.word2Webs(nombre);
+		this.lista = lista.word2Webs(this.nombre);
+		this.lista.imprimirLista();
 	}
 
 }

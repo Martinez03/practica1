@@ -44,6 +44,11 @@ public class ListaPalabrasClaves
 		this.lista.add(w);
 	}
 	
+	public PalabraClave pos2Word(int w)
+	{
+		return this.lista.get(w);
+	}
+	
 	
 
 }

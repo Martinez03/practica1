@@ -12,7 +12,7 @@ public class ListaWebsTest {
 	@Before
 	public void setUp() throws Exception 
 	{
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/index-2022-2023.txt");
 	}
 
 	@After
@@ -47,7 +47,7 @@ public class ListaWebsTest {
 	{
 		
 		
-		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
+		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
 		Webs.getWebs().getLista().enlacesSalientes("0-360.com").imprimirLista();
 		//ImprimirListaParaComprobar
 		Webs.getWebs().getLista().enlacesSalientes("0-5.co.il");  //ListaVacia
@@ -62,16 +62,17 @@ public class ListaWebsTest {
 	@Test
 	public void testWord2Webs() 
 	{
-		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
+		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/words.txt");
 		Webs.getWebs().getLista().word2Webs("weight").imprimirLista();//se devuelve por pantalla los nombres de las webs
 		Webs.getWebs().getLista().word2Webs("abanga").imprimirLista();
+		Webs.getWebs().getLista().word2Webs("wrtwhkcbicob").imprimirLista();//no hay ninguna web
 		
 	}
 	
 	@Test
 	public void testOrdenarLista() 
 	{
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/prueba.txt");
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/prueba.txt");
 		Webs.getWebs().getLista().ordenarLista();
 		Webs.getWebs().getLista().imprimirLista();
 		

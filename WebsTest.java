@@ -19,7 +19,12 @@ public class WebsTest {
 	public void tearDown() throws Exception {
 	}
 
-	
+	@Test
+	public void testCargarLista() 
+	{
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().getLista().imprimirLista();
+	}
 	
 	@Test
 	public void testCargarListaLigada() {

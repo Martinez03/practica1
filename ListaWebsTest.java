@@ -19,33 +19,26 @@ public class ListaWebsTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testListaWebs() 
-	{
-		
-		
-	}
-
 	
 	@Test
 	public void testId2Web() 
 	{
-		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		
 		assertEquals("verseschmiede.com", Webs.getWebs().getLista().id2Web(1902115).getNombre());
-		Webs.getWebs().getLista().id2String(999999999);
+		Webs.getWebs().getLista().id2String(999999999);//fuera de rango
 	}
 	
 	@Test
 	public void testId2String() 
 	{
-		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		
 		assertEquals("verseschmiede.com", Webs.getWebs().getLista().id2String(1902115));
-		Webs.getWebs().getLista().id2String(999999999);
+		Webs.getWebs().getLista().id2String(999999999);//fuera de rango
 	}
 
 	@Test
 	public void testString2Id() {
-		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		
 		assertEquals(Webs.getWebs().getLista().string2Id("01gif-anime.com"),446);
 	}
 
@@ -53,7 +46,7 @@ public class ListaWebsTest {
 	public void testEnlacesSalientes() 
 	{
 		
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		
 		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
 		Webs.getWebs().getLista().enlacesSalientes("0-360.com").imprimirLista();
 		//ImprimirListaParaComprobar

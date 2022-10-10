@@ -31,7 +31,7 @@ public class ListaPalabrasClavesTest {
 
 	
 	@Test
-	public void testName2Words() 
+	public void testName2Word() 
 	{
 		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");

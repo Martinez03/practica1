@@ -9,10 +9,12 @@ public class Webs
 	private ListaWebs lista;
 	private static Webs miWebs = new Webs();
 	
+	
 	private Webs()
 	{
 		this.lista = new ListaWebs();
 	}
+	
 	
 	public static Webs getWebs() 
 	{
@@ -38,7 +40,7 @@ public class Webs
 				id = Integer.parseInt(array[0]);    
 				nombre = array[1];
 				pWeb = new Web(nombre, id);
-				this.lista.anadirWeb(pWeb);	
+				this.lista.anadirWeb(pWeb);
 			}     
 			entrada.close();   
 			}   
@@ -55,9 +57,7 @@ public class Webs
 		String[] listaIdsSep;
 		Web pWeb;
 		Web pWeb2;
-		
-		
-		
+
 		try {      
 			Scanner entrada = new Scanner(new FileReader(nomF));
 			String linea;   
@@ -97,5 +97,6 @@ public class Webs
 	
 	
 	}
+	
 
 }

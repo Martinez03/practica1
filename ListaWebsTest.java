@@ -9,11 +9,10 @@ import org.junit.Test;
 public class ListaWebsTest {
 	
 	
-	private ListaWebs lista;
 	@Before
 	public void setUp() throws Exception 
 	{
-		lista = new ListaWebs();
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 	}
 
 	@After
@@ -21,44 +20,68 @@ public class ListaWebsTest {
 	}
 
 	@Test
-	public void testListaWebs() {
-		//fail("Not yet implemented");
-		assertTrue(true);
-	}
-
-	@Test
-	public void testCargarLista() 
+	public void testListaWebs() 
 	{
-		lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/index-2022-2023.txt");
-		assertTrue(true);
+		
+		
 	}
 
+	
+	@Test
+	public void testId2Web() 
+	{
+		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		assertEquals("verseschmiede.com", Webs.getWebs().getLista().id2Web(1902115).getNombre());
+		Webs.getWebs().getLista().id2String(999999999);
+	}
+	
 	@Test
 	public void testId2String() 
 	{
-		lista.cargarLista("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/index-2022-2023.txt");
-		System.out.println(lista.id2String(1902119));
-		assertTrue(lista.id2String.equals("versexoenvivo.com");
+		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		assertEquals("verseschmiede.com", Webs.getWebs().getLista().id2String(1902115));
+		Webs.getWebs().getLista().id2String(999999999);
 	}
 
 	@Test
 	public void testString2Id() {
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/index-2022-2023.txt");
-		System.out.println(lista.string2Id("003.spb.ru"));
-		assertTrue(lista.string2Id.equals(124);
+		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		assertEquals(Webs.getWebs().getLista().string2Id("01gif-anime.com"),446);
 	}
 
 	@Test
-	public void testEnlacesSalientes() {
-		//fail("Not yet implemented");
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/index-2022-2023.txt");
-		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_aÃ±o/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
-		//Primer caso: web con varias webs asociadas
-		Webs.getLista().enlacesSalientes("0-200.com");
-		//Segundo caso: web con una web asociada
-		Webs.getLista().enlacesSalientes("0-311.com");
-		//Tercer caso: web sin webs asociadas
-		Webs.getLista().enlacesSalientes("0-5.co.il");
+	public void testEnlacesSalientes() 
+	{
+		
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		Webs.getWebs().cargarListaLigada("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/pld-arcs-1-N-2022-2023.txt");
+		Webs.getWebs().getLista().enlacesSalientes("0-360.com").imprimirLista();
+		//ImprimirListaParaComprobar
+		Webs.getWebs().getLista().enlacesSalientes("0-5.co.il");  //ListaVacia
+		Webs.getWebs().getLista().enlacesSalientes("tchibo.ch").imprimirLista();
+		//ImprimirLista
+		Webs.getWebs().getLista().enlacesSalientes("tchin-tchine.com");  //ListaVacia
+		
+		
+		
 	}
-
+	
+	@Test
+	public void testWord2Webs() 
+	{
+		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
+		Webs.getWebs().getLista().word2Webs("weight").imprimirLista();//se devuelve por pantalla los nombres de las webs
+		Webs.getWebs().getLista().word2Webs("abanga").imprimirLista();
+		
+	}
+	
+	@Test
+	public void testOrdenarLista() 
+	{
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/prueba.txt");
+		Webs.getWebs().getLista().ordenarLista();
+		Webs.getWebs().getLista().imprimirLista();
+		
+	}
+	
 }

@@ -16,9 +16,13 @@ public class WebTest {
 	}
 
 	@Test
-	public void testCargarListaLigada() {
+	public void testCargarListaPalabrasClave() 
+	{
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
-		pWeb = Webs.getWebs().getLista().id2Web(9);
+		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
+		Webs.getWebs().getLista().id2Web(15).cargarListaPalabrasClave();
+		Webs.getWebs().getLista().id2Web(15).getListaPalabras().imprimirLista();
 	}
 
+		
 }

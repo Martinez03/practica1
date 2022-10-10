@@ -1,6 +1,6 @@
 package Practica1;
 
-import static org.junit.Assert.*;
+
 
 import org.junit.After;
 import org.junit.Before;
@@ -19,15 +19,7 @@ public class WebsTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testGetWebs() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetLista() {
-		fail("Not yet implemented");
-	}
+	
 	
 	@Test
 	public void testCargarListaLigada() {

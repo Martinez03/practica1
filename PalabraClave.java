@@ -8,6 +8,7 @@ public class PalabraClave
 	public PalabraClave(String pNombre)
 	{
 		this.nombre = pNombre;
+		this.lista = new ListaWebs();
 	}
 
 	public String getNombre() {
@@ -16,8 +17,13 @@ public class PalabraClave
 	
 	public void cargarListaWebs()
 	{
-		this.lista = lista.word2Webs(this.nombre);
-		this.lista.imprimirLista();
+		this.lista = Webs.getWebs().getLista().word2Webs(nombre);
 	}
+
+	public ListaWebs getLista() {
+		return lista;
+	}
+
+	
 
 }

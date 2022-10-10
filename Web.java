@@ -1,8 +1,5 @@
 package Practica1;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Scanner;
 
 public class Web {
 	private String nombre;
@@ -26,16 +23,21 @@ public class Web {
 		return id;
 	}
 
-	public ListaWebs getListaWebs() {
+	public ListaWebs getListaWebs() 
+	{
 		return this.listaWebs;
 	}
 	
 	public void cargarListaPalabrasClave() 
 	{
 		
-		this.listaPalabras =  listaPalabras.web2Words(this.nombre);
+		this.listaPalabras =  PalabrasClave.getPalabrasClave().getLista().web2Words(nombre);
 	}
 	
+	public ListaPalabrasClaves getListaPalabras() 
+	{
+		return this.listaPalabras;
+	}
 	
 
 	

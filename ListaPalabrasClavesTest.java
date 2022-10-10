@@ -25,12 +25,18 @@ public class ListaPalabrasClavesTest {
 		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 		Web pWeb = Webs.getWebs().getLista().id2Web(222);
-		PalabrasClave.getPalabrasClave().getLista().web2Words(pWeb.getNombre());
-	}
-
-	@Test
-	public void testAnadirPalabra() {
+		PalabrasClave.getPalabrasClave().getLista().web2Words(pWeb.getNombre()).imprimirLista();
 		
 	}
+
+	
+	@Test
+	public void testName2Words() 
+	{
+		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		assertEquals(PalabrasClave.getPalabrasClave().getLista().name2word("weight").getNombre(),"weight");
+	}
+	
 
 }

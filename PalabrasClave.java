@@ -36,7 +36,6 @@ public class PalabrasClave
 				nombre = linea;
 				pPalabra = new PalabraClave(nombre);
 				this.lista.anadirPalabra(pPalabra);	
-				//System.out.println(pPalabra.getNombre());
 			}     
 			entrada.close();   
 			}   
@@ -45,6 +44,8 @@ public class PalabrasClave
 			e.printStackTrace();
 		}
 		}
+	
+	
 
 
 }

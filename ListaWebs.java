@@ -49,7 +49,7 @@ public class ListaWebs {
 	public int string2Id(String s) 
 	{
 		Web pWeb;
-		int id = 0;
+		int id = -1;
 		boolean salir = false;
 		Iterator <Web> itr = this.getIterador();
 		while (!salir && itr.hasNext()) 
@@ -62,7 +62,7 @@ public class ListaWebs {
 				}
 			}
 		System.out.println(id);
-		if (id == 0){
+		if (id == -1){
 			System.out.println("Web no encontrada.");
 		}
 		return id;
@@ -71,7 +71,7 @@ public class ListaWebs {
 	public ListaWebs enlacesSalientes(String s)
 	{
 		int id = this.string2Id(s);
-		if (id != 0){
+		if (id != -1){
 			Web pWeb = this.lista.get(id);
 			return pWeb.getListaWebs();
 		} else {

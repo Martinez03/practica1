@@ -18,17 +18,19 @@ public class ListaPalabrasClaves
 	public ListaPalabrasClaves web2Words(String w)
 	{
 		ListaPalabrasClaves pLista = new ListaPalabrasClaves();
-		PalabraClave pPalabraClave;
-		Iterator<PalabraClave> it = this.getIterador();
-		while (it.hasNext())
-		{
-			pPalabraClave = it.next();
-			if (w.contains(pPalabraClave.getNombre()))
+		if (Webs.getWebs().string2Id(w) != 0){ //comprobar que la web existe
+			PalabraClave pPalabraClave;
+			Iterator<PalabraClave> it = this.getIterador();
+			while (it.hasNext())
 			{
-				pLista.anadirPalabra(pPalabraClave);
-				System.out.println(pPalabraClave.getNombre());
-			}
+				pPalabraClave = it.next();
+				if (w.contains(pPalabraClave.getNombre()))
+				{
+					pLista.anadirPalabra(pPalabraClave);
+					System.out.println(pPalabraClave.getNombre());
+				}
 			
+			}
 		}
 		return pLista;
 		

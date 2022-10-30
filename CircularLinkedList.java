@@ -3,10 +3,10 @@ package segundaFase;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class CircularLinkedList<T> implements ListADT<T> {
+public class CircularLinkedList<Web> implements ListADT<Web> {
 
 	// Atributos
-	protected Node<T> last; // apuntador al ultimo
+	protected Node<Web> last; // apuntador al ultimo
 	protected String descr;  // descripción
 	protected int count;
 
@@ -25,28 +25,28 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	  return descr;
 	}
 
-	public T removeFirst() {
+	public Web removeFirst() {
 	// Elimina el primer elemento de la lista
         // Precondición: la lista tiene al menos un elemento
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		
-		Node<T> res = last.next;
+		Node<Web> res = last.next;
 		if (this.last.next.equals(last)){last = null; count = count -1;} //un solo elemento
-		else {this.last.next = this.last.next.next;}
+		else {this.last.next = this.last.next.next; count = count -1;}
 		return res.data;
 		
 		//coste: constante
 	}
 
-	public T removeLast() {
+	public Web removeLast() {
 	// Elimina el último elemento de la lista
         // Precondición: la lista tiene al menos un elemento
 			// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 			
-		Node<T> res = last;
+		Node<Web> res = last;
 		if (this.last.next.equals(last)){last = null; count = count -1;} //un solo elemento
 		else {
-			Node<T> actual = last.next;
+			Node<Web> actual = last.next;
 			
 			while (actual.next != last) {
 				actual = actual.next;
@@ -59,14 +59,14 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	}
 
 
-	public T remove(T elem) {
+	public Web remove(Web elem) {
 	//Elimina un elemento concreto de la lista
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		
 		if (last.next.data.equals(elem)) {removeLast();}
 		else {
-			Node<T> actual = last.next;
-			Node<T> prev = last;
+			Node<Web> actual = last.next;
+			Node<Web> prev = last;
 			while (!actual.data.equals(elem)) {
 				actual = actual.next;
 				prev = prev.next;
@@ -79,7 +79,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		//coste: n
 	}
 
-	public T first() {
+	public Web first() {
 	//Da acceso al primer elemento de la lista
 	      if (isEmpty())
 	          return null;
@@ -88,7 +88,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	      //coste: 1
 	}
 
-	public T last() {
+	public Web last() {
 	//Da acceso al último elemento de la lista
 	      if (isEmpty())
 	          return null;
@@ -97,8 +97,8 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	      //coste: 1
 	}
 
-	public boolean contains(T elem) {
-		Node<T> actual = last;
+	public boolean contains(Web elem) {
+		Node<Web> actual = last;
 		if (actual == null) {return false;}
 		else {
 			boolean enc = false;
@@ -115,7 +115,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		//coste: n
 	}
 
-	public T find(T elem) {
+	public Web find(Web elem) {
 	//Determina si la lista contiene un elemento concreto, y develve su referencia, null en caso de que no esté
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		if (this.contains(elem)) {return elem;}
@@ -133,10 +133,10 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	{ return count;};
 	
 	/** Return an iterator to the stack that iterates through the items . */ 
-	   public Iterator<T> iterator() { return new ListIterator(); } 
+	   public Iterator<Web> iterator() { return new ListIterator(); } 
 
 	   // an iterator, doesn't implement remove() since it's optional 
-	   private class ListIterator implements Iterator<T> { 
+	   private class ListIterator implements Iterator<Web> { 
 
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 
@@ -152,9 +152,9 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		@Override
 		public String toString() {
 			String result = new String();
-			Iterator<T> it = iterator();
+			Iterator<Web> it = iterator();
 			while (it.hasNext()) {
-				T elem = it.next();
+				Web elem = it.next();
 				result = result + "[" + elem.toString() + "] \n";
 			}	
 			return "SimpleLinkedList " + result + "]";

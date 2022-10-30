@@ -1,11 +1,11 @@
 package segundaFase;
 
-public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implements UnorderedListADT<T> {
+public class UnorderedCircularLinkedList<Web> extends CircularLinkedList<Web> implements UnorderedListADT<Web> {
 	
-	public void addToFront(T elem) {
+	public void addToFront(Web elem) {
 	// añade un elemento al comienzo
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-		Node<T> nuevo = new Node<T>(elem);
+		Node<Web> nuevo = new Node<Web>(elem);
 		if (isEmpty()) {last = nuevo; nuevo.next = nuevo;}
 		else {
 			nuevo.next = last.next;
@@ -15,10 +15,10 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		//coste: 1
 	}
 
-	public void addToRear(T elem) {
+	public void addToRear(Web elem) {
 	// añade un elemento al final 
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-		Node<T> nuevo = new Node<T>(elem);
+		Node<Web> nuevo = new Node<Web>(elem);
 		if (isEmpty()) {last = nuevo; nuevo.next = nuevo;}
 		else {
 			nuevo.next = last.next;
@@ -29,13 +29,13 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		//coste: 1
 	}
 	
-	public void addAfter(T elem, T target) {
+	public void addAfter(Web elem, Web target) {
 	// Añade elem detrás de otro elemento concreto, target,  que ya se encuentra en la lista
 		// ¡COMPLETAR OPCIONAL!
-		Node<T> nuevo = new Node<T>(elem);
+		Node<Web> nuevo = new Node<Web>(elem);
 		if (last.next == null) {addToRear(elem);}
 		else {
-			Node<T> actual = last;
+			Node<Web> actual = last;
 			while (actual.data != target) {
 				actual = actual.next;
 			}

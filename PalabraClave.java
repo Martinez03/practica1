@@ -3,7 +3,7 @@ package Practica1;
 public class PalabraClave 
 {
 	private String nombre;
-	private ListaWebs lista;
+	private UnorderedCircularLinkedList lista;
 	
 	public PalabraClave(String pNombre)
 	{
@@ -20,7 +20,7 @@ public class PalabraClave
 		this.lista = Webs.getWebs().getLista().word2Webs(nombre);
 	}
 
-	public ListaWebs getLista() {
+	public UnorderedCircularLinkedList getLista() {
 		return lista;
 	}
 

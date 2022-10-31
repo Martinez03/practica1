@@ -137,9 +137,27 @@ public class CircularLinkedList<Web> implements ListADT<Web> {
 
 	   // an iterator, doesn't implement remove() since it's optional 
 	   private class ListIterator implements Iterator<Web> { 
-
+		   Node<Web> aux = last;
+		   boolean vuelta = false;
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-
+		   public boolean hasNext() 
+		   {
+			   boolean seguir = true;
+			   
+			   if (aux == last && vuelta) 
+			   {
+				   seguir = false;
+			   }
+			   vuelta = true;
+			   return seguir;
+		   }
+		   
+		   public Web next() 
+		   {
+			  
+			  aux = aux.next;
+			  return aux.data;
+		   }
 
 
 	   } // private class
@@ -159,5 +177,6 @@ public class CircularLinkedList<Web> implements ListADT<Web> {
 			}	
 			return "SimpleLinkedList " + result + "]";
 		}
-
+		
+		
 }

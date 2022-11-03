@@ -1,4 +1,4 @@
-package segundaFase;
+package segundaFaseEnPractica1;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -148,14 +148,18 @@ public class CircularLinkedList<Web> implements ListADT<Web> {
 			   {
 				   seguir = false;
 			   }
+			   else if(aux == null)//por si no hay elementos que recorrer
+			   {
+				   seguir = false;
+			   }
 			   vuelta = true;
 			   return seguir;
 		   }
 		   
 		   public Web next() 
 		   {
-			  
 			  aux = aux.next;
+			  
 			  return aux.data;
 		   }
 
@@ -177,6 +181,5 @@ public class CircularLinkedList<Web> implements ListADT<Web> {
 			}	
 			return "SimpleLinkedList " + result + "]";
 		}
-		
 		
 }

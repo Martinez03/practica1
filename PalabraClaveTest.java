@@ -1,4 +1,4 @@
-package Practica1;
+package segundaFaseEnPractica1;
 
 
 import org.junit.After;
@@ -20,8 +20,7 @@ public class PalabraClaveTest {
 	{
 		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
-		PalabrasClave.getPalabrasClave().getLista().name2word("weight").cargarListaWebs();
-		PalabrasClave.getPalabrasClave().getLista().name2word("weight").getLista().imprimirLista();
+		
 	}
 
 }

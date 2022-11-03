@@ -1,4 +1,4 @@
-package Practica1;
+package segundaFaseEnPractica1;
 
 import static org.junit.Assert.*;
 

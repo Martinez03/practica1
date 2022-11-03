@@ -1,14 +1,14 @@
-package Practica1;
+package segundaFaseEnPractica1;
 
 public class PalabraClave 
 {
 	private String nombre;
-	private UnorderedCircularLinkedList lista;
+	private UnorderedCircularLinked<String> lista;
 	
 	public PalabraClave(String pNombre)
 	{
 		this.nombre = pNombre;
-		this.lista = new ListaWebs();
+		this.lista = new UnorderedCircularLinked<>();
 	}
 
 	public String getNombre() {
@@ -20,7 +20,7 @@ public class PalabraClave
 		this.lista = Webs.getWebs().getLista().word2Webs(nombre);
 	}
 
-	public UnorderedCircularLinkedList getLista() {
+	public UnorderedCircularLinked<String> getLista() {
 		return lista;
 	}
 

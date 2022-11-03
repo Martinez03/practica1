@@ -1,4 +1,4 @@
-package segundaFase;
+package segundaFaseEnPractica1;
 
 public interface UnorderedListADT<Web> extends ListADT<Web> {
 	

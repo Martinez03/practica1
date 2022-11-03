@@ -1,4 +1,4 @@
-package Practica1;
+package segundaFaseEnPractica1;
 
 import static org.junit.Assert.*;
 
@@ -12,7 +12,7 @@ public class ListaWebsTest {
 	@Before
 	public void setUp() throws Exception 
 	{
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
+		//Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/index-2022-2023.txt");
 	}
 
 	@After
@@ -20,7 +20,7 @@ public class ListaWebsTest {
 	}
 
 	
-	@Test
+	//@Test
 	public void testId2Web() 
 	{
 		
@@ -28,7 +28,7 @@ public class ListaWebsTest {
 		Webs.getWebs().getLista().id2String(999999999);//fuera de rango
 	}
 	
-	@Test
+	//@Test
 	public void testId2String() 
 	{
 		
@@ -36,13 +36,13 @@ public class ListaWebsTest {
 		Webs.getWebs().getLista().id2String(999999999);//fuera de rango
 	}
 
-	@Test
+	//@Test
 	public void testString2Id() {
 		
 		assertEquals(Webs.getWebs().getLista().string2Id("01gif-anime.com"),446);
 	}
 
-	@Test
+	//@Test
 	public void testEnlacesSalientes() 
 	{
 		
@@ -62,14 +62,16 @@ public class ListaWebsTest {
 	@Test
 	public void testWord2Webs() 
 	{
-		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/words.txt");
-		Webs.getWebs().getLista().word2Webs("weight").imprimirLista();//se devuelve por pantalla los nombres de las webs
-		Webs.getWebs().getLista().word2Webs("abanga").imprimirLista();
-		Webs.getWebs().getLista().word2Webs("wrtwhkcbicob").imprimirLista();//no hay ninguna web
+		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_a�o/EDA/datuak-2022-2023/index-2022-2023.txt");
+		PalabrasClave.getPalabrasClave().cargarListaPalabras("C:/Users/Pablo/Documents/UNI/2_a�o/EDA/datuak-2022-2023/words.txt");
+		//PalabrasClave.getPalabrasClave().getLista().imprimirLista();
+		Webs.getWebs().getLista().word2Webs("weight").visualizarNodos();//se devuelve por pantalla los nombres de las webs
+		Webs.getWebs().getLista().word2Webs("abanga").visualizarNodos();
+		Webs.getWebs().getLista().word2Webs("wrtwhkcbicob").visualizarNodos();//no hay ninguna web
 		
 	}
 	
-	@Test
+	//@Test
 	public void testOrdenarLista() 
 	{
 		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/prueba.txt");

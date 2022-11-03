@@ -1,4 +1,4 @@
-package segundaFase;
+package segundaFaseEnPractica1;
 
 	public class Node<Web> {
 		public Web data; 			// dato del nodo

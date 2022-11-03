@@ -1,6 +1,6 @@
-package segundaFase;
+package segundaFaseEnPractica1;
 
-public class UnorderedCircularLinkedList<Web> extends CircularLinkedList<Web> implements UnorderedListADT<Web> {
+public class UnorderedCircularLinked<Web> extends CircularLinkedList<Web> implements UnorderedListADT<Web> {
 	
 	public void addToFront(Web elem) {
 	// añade un elemento al comienzo

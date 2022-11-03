@@ -1,4 +1,4 @@
-package Practica1;
+package segundaFaseEnPractica1;
 
 import java.io.FileReader;
 import java.io.IOException;

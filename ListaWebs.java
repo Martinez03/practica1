@@ -1,5 +1,4 @@
-package Practica1;
-
+package segundaFaseEnPractica1;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,6 +74,22 @@ public class ListaWebs {
 		}
 	}
 	
+	public UnorderedCircularLinked<String> word2Webs(String s)
+	{
+		UnorderedCircularLinked<String> pLista = new UnorderedCircularLinked<>();
+		Web pWeb;
+		Iterator<Web> it = this.getIterador();
+		while (it.hasNext())
+		{
+			pWeb = it.next();
+			if (pWeb.getNombre().contains(s))
+			{
+				pLista.addToRear(pWeb.getNombre());
+			}
+		}
+		return pLista;
+	}
+	
 	public ListaWebs enlacesSalientes(String s)
 	{
 		{
@@ -87,21 +102,6 @@ public class ListaWebs {
 				return Webs.getWebs().getLista();
 			}
 		}
-	}
-	public ListaWebs word2Webs(String s)
-	{
-		ListaWebs pLista = new ListaWebs();
-		Web pWeb;
-		Iterator<Web> it = this.getIterador();
-		while (it.hasNext())
-		{
-			pWeb = it.next();
-			if (pWeb.getNombre().contains(s))
-			{
-				pLista.anadirWeb(pWeb);
-			}
-		}
-		return pLista;
 	}
 	
 	public void imprimirLista()
@@ -134,6 +134,8 @@ public class ListaWebs {
 	        return s1.getNombre().compareTo(s2.getNombre()); 
 	    } 
 	} 
+	 
+	
 	 
 	
 

@@ -1,4 +1,4 @@
-package segundaFase;
+package segundaFaseEnPractica1;
 
 import java.util.Iterator;
 
@@ -16,7 +16,7 @@ public Web removeFirst();
 public Web removeLast();
 //Elimina el último elemento de la lista
 
-public Web remove(T elem);
+public Web remove(Web elem);
 //Elimina un elemento concreto de la lista
 
 public Web first();

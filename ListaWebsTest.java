@@ -71,13 +71,5 @@ public class ListaWebsTest {
 		
 	}
 	
-	//@Test
-	public void testOrdenarLista() 
-	{
-		Webs.getWebs().cargarLista("C:/Users/Pablo/Documents/UNI/2_año/EDA/datuak-2022-2023/prueba.txt");
-		Webs.getWebs().getLista().ordenarLista();
-		Webs.getWebs().getLista().imprimirLista();
-		
-	}
 	
 }

@@ -36,7 +36,7 @@ public class UnorderedCircularLinked<Web> extends CircularLinkedList<Web> implem
 		if (last.next == null) {addToRear(elem);}
 		else {
 			Node<Web> actual = last;
-			while (actual.data != target) {
+			while (!actual.data.equals(target)) {
 				actual = actual.next;
 			}
 			nuevo = actual.next;
